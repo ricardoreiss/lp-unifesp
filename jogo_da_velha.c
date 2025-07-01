@@ -32,8 +32,8 @@ void atualizarTabuleiro(char tabuleiro[][TAMANHO], int linha, int coluna, char s
 void fazerJogadaComputador(char tabuleiro[][TAMANHO], char simbolo) {
     int linha, coluna;
     do {
-        linha = rand(time(NULL)) % 3 + 1;
-        coluna = rand(time(NULL)) % 3 + 1;
+        linha = rand() % 3 + 1;
+        coluna = rand() % 3 + 1;
     } while (!verificarJogada(tabuleiro, linha, coluna));
     atualizarTabuleiro(tabuleiro, linha, coluna, simbolo);
 }
