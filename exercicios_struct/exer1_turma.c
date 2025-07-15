@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h> // Added for strcspn
 
 typedef struct aluno {
     int RA;
@@ -37,12 +38,14 @@ void adicionar_aluno() {
     aluno a;
     printf("Digite o RA do aluno: ");
     scanf("%d", &a.RA);
+    getchar();
     if (verificar_RA(a.RA)) {
         printf("Aluno já cadastrado!\n");
         return;
     }
     printf("Digite o nome do aluno: ");
-    scanf("%s", a.nome);
+    fgets(a.nome, sizeof(a.nome), stdin);
+    a.nome[strlen(a.nome) - 1] = '\0';
     printf("Digite a nota do aluno: ");
     scanf("%f", &a.nota);
     printf("Digite a frequência do aluno: ");
