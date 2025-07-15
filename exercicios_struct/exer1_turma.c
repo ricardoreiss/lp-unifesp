@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h> // Added for strcspn
+#include <string.h>
 
 typedef struct aluno {
     int RA;
